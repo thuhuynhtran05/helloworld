@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile</title>
+  <style>
+    body {
+      background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/vibrant-floral.png'); /* Ảnh nền sống động hơn */
+      background-repeat: repeat;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      color: #333;
+      padding: 20px;
+      overflow: hidden;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.85); /* Nền mờ để dễ đọc */
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .image-frame {
+      width: 320px;
+      height: 220px;
+      background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+      padding: 10px;
+      display: inline-block;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    img {
+      width: 300px;
+      height: 200px;
+      border-radius: 15px;
+      transition: transform 0.3s, filter 0.3s;
+      filter: brightness(1.2) contrast(1.1);
+    }
+    img:hover {
+      transform: scale(1.05);
+      filter: brightness(1.4) contrast(1.2);
+    }
+    a {
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      color: #ff5733;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    /* Hiệu ứng hoa rơi */
+    .flower {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-image: url('https://cdn-icons-png.flaticon.com/512/3176/3176364.png');
+      background-size: cover;
+      animation: fall linear infinite;
+    }
+    @keyframes fall {
+      0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+<audio autoplay loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-sunny.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<div class="container">
+  <h1>Hello World!</h1>
+  <div class="image-frame">
+    <a href="https://www.facebook.com/profile.php?id=100029126086210" draggable="true">
+      <img src="./480097339_1437306100583579_7704123450817790203_n.jpg" draggable="true" />
+    </a>
+  </div>
+  <h2>This is my information</h2>
+  <ul>
+    <li>My full name is: Huynh Tran Anh Thu</li>
+    <li>Date of birth: 08/02</li>
+  </ul>
+  <h2>This is the location of my hometown:</h2>
+  <a href="https://www.google.com/maps/...">Click here</a>
+</div>
+<script>
+  function createFlower() {
+    const flower = document.createElement("div");
+    flower.classList.add("flower");
+    flower.style.left = Math.random() * window.innerWidth + "px";
+    flower.style.animationDuration = (Math.random() * 3 + 2) + "s"; // Random tốc độ rơi
+    document.body.appendChild(flower);
+    setTimeout(() => flower.remove(), 5000);
+  }
+  setInterval(createFlower, 500);
+</script>
+</body>
+</html>
+
